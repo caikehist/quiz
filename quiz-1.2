@@ -1,0 +1,422 @@
+<div id="quiz-container">
+    <h1>Quiz de Conhecimentos</h1>
+    <div id="quiz-area">
+        </div>
+    <div id="quiz-navigation">
+        <button id="prev-button" style="display: none;">Voltar</button>
+        <button id="next-button" style="display: none;">Próximo</button>
+    </div>
+</div>
+
+<div id="results-area">
+    <div id="final-stats" style="display: none;">
+        <p>Você acertou <span id="final-score"></span> de <span id="total-questions-final"></span> perguntas!</p>
+        <p>Aproveitamento: <span id="percentage-final"></span></p>
+        <button id="restart-button">Recomeçar Quiz</button>
+    </div>
+</div>
+
+<div id="ranking-container">
+    <h2>Ranking</h2>
+    <ol id="ranking-list"></ol>
+</div>
+
+<style>
+#quiz-container {
+    font-family: Arial, sans-serif;
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.question-slide {
+    display: none;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.question-slide.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.question h3 {
+    margin-top: 0;
+}
+
+.question-slide img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.options label {
+    display: block;
+    margin-bottom: 10px;
+    cursor: pointer;
+    padding: 12px;
+    background-color: #e9e9e9;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.options label img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+.options label:hover {
+    background-color: #dcdcdc;
+}
+
+.options input[type="radio"] {
+    display: none;
+}
+
+.options .correct {
+    background-color: #c3e6cb;
+    border: 1px solid #155724;
+}
+
+.options .incorrect {
+    background-color: #f8d7da;
+    border: 1px solid #721c24;
+}
+
+#quiz-navigation {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+#quiz-navigation button, #restart-button {
+    padding: 10px 15px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#quiz-navigation button:hover, #restart-button:hover {
+    background-color: #0056b3;
+}
+
+#results-area {
+    font-family: Arial, sans-serif;
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 15px;
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+    display: none;
+}
+
+#ranking-container {
+    font-family: Arial, sans-serif;
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#ranking-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+#ranking-list li {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+}
+
+#ranking-list li:last-child {
+    border-bottom: none;
+}
+</style>
+
+<script>
+const quizContainer = document.getElementById('quiz-container');
+const quizArea = document.getElementById('quiz-area');
+const resultsArea = document.getElementById('results-area');
+const prevButton = document.getElementById('prev-button');
+const nextButton = document.getElementById('next-button');
+const restartButton = document.getElementById('restart-button');
+const finalStats = document.getElementById('final-stats');
+const rankingList = document.getElementById('ranking-list');
+
+// Substitua este URL pelo link direto para o seu arquivo perguntas.json
+const quizDataUrl = 'https://raw.githubusercontent.com/caikehist/quiz/refs/heads/main/teste';
+
+let myQuestions = [];
+let currentQuestionIndex = 0;
+let userAnswers = [];
+
+// Funções para gerenciar cookies
+function setCookie(name, value, days) {
+    const d = new Date();
+    d.setTime(d.getTime() + (days * 24 * 60 * 60 * 1000));
+    const expires = "expires=" + d.toUTCString();
+    document.cookie = name + "=" + JSON.stringify(value) + ";" + expires + ";path=/";
+}
+
+function getCookie(name) {
+    const cname = name + "=";
+    const decodedCookie = decodeURIComponent(document.cookie);
+    const ca = decodedCookie.split(';');
+    for(let i = 0; i < ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) === ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(cname) === 0) {
+            return JSON.parse(c.substring(cname.length, c.length));
+        }
+    }
+    return [];
+}
+
+function updateRanking(newScore) {
+    const ranking = getCookie("quiz_ranking") || [];
+    const player = prompt("Parabéns! Qual o seu nome para o ranking?");
+    if (player) {
+        ranking.push({ name: player, score: newScore });
+        ranking.sort((a, b) => b.score - a.score);
+        setCookie("quiz_ranking", ranking.slice(0, 5), 365);
+    }
+    displayRanking();
+}
+
+function displayRanking() {
+    const ranking = getCookie("quiz_ranking") || [];
+    rankingList.innerHTML = "";
+    if (ranking.length === 0) {
+        rankingList.innerHTML = "<li>Nenhum resultado ainda. Seja o primeiro!</li>";
+    } else {
+        ranking.forEach((entry, index) => {
+            rankingList.innerHTML += `<li><span>${index + 1}. ${entry.name}</span><span>${entry.score} acertos</span></li>`;
+        });
+    }
+}
+
+// Funções do Quiz
+async function loadQuiz() {
+    try {
+        const response = await fetch(quizDataUrl);
+        if (!response.ok) {
+            throw new Error('Erro ao carregar o questionário. Verifique o URL.');
+        }
+        myQuestions = await response.json();
+        buildQuiz();
+        displayRanking();
+    } catch (error) {
+        console.error('Falha ao carregar o quiz:', error);
+        quizArea.innerHTML = `<p style="color:red;">Não foi possível carregar o quiz. Verifique a URL do arquivo JSON.</p>`;
+    }
+}
+
+function buildQuiz() {
+    if (myQuestions.length === 0) {
+        return;
+    }
+
+    quizArea.innerHTML = "";
+    userAnswers = [];
+    const letters = ['A', 'B', 'C', 'D'];
+    myQuestions.forEach((question, index) => {
+        const questionElement = document.createElement('div');
+        questionElement.classList.add('question-slide');
+        questionElement.id = `q-${index}`;
+
+        const imageHtml = question.image ? `<img src="${question.image}" alt="Imagem da pergunta">` : '';
+
+        const optionsHtml = question.options.map((option, optIndex) => {
+            const optionImageHtml = option.image ? `<br><img src="${option.image}" alt="Imagem da alternativa">` : '';
+            return `
+                <label>
+                    <input type="radio" name="question${index}" value="${option.text}">
+                    <b>${letters[optIndex]})</b> ${option.text}
+                    ${optionImageHtml}
+                </label>
+            `;
+        }).join('');
+
+        questionElement.innerHTML = `
+            <h3>${question.question}</h3>
+            ${imageHtml}
+            <div class="options">${optionsHtml}</div>
+        `;
+
+        quizArea.appendChild(questionElement);
+    });
+
+    addEventListeners();
+    showQuestion(0);
+}
+
+function addEventListeners() {
+    myQuestions.forEach((_, index) => {
+        const questionElement = document.getElementById(`q-${index}`);
+        const optionInputs = questionElement.querySelectorAll('input[type="radio"]');
+        
+        optionInputs.forEach(input => {
+            input.addEventListener('change', (event) => {
+                const userAnswer = event.target.value;
+                userAnswers[index] = userAnswer;
+                checkAnswer(event, index);
+            });
+        });
+    });
+
+    prevButton.addEventListener('click', () => navigateQuestions(-1));
+    nextButton.addEventListener('click', () => navigateQuestions(1));
+    restartButton.addEventListener('click', () => {
+        finalStats.style.display = 'none';
+        resultsArea.style.display = 'none';
+        quizContainer.style.display = 'block';
+        currentQuestionIndex = 0;
+        loadQuiz();
+        quizContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+}
+
+function showQuestion(index) {
+    const slides = document.querySelectorAll('.question-slide');
+    slides.forEach(slide => slide.classList.remove('active'));
+    slides[index].classList.add('active');
+
+    if (index > 0) {
+        prevButton.style.display = 'inline-block';
+    } else {
+        prevButton.style.display = 'none';
+    }
+
+    if (userAnswers[index] !== undefined && index < myQuestions.length -1) {
+        nextButton.style.display = 'inline-block';
+    } else {
+        nextButton.style.display = 'none';
+    }
+
+    if (userAnswers[index] !== undefined) {
+        checkAnswerStatus(index);
+    } else {
+        resetQuestionState(index);
+    }
+    
+    quizContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
+function resetQuestionState(index) {
+    const questionElement = document.getElementById(`q-${index}`);
+    const labels = questionElement.querySelectorAll('label');
+    const allOptions = questionElement.querySelectorAll('input[type="radio"]');
+
+    labels.forEach(label => {
+        label.classList.remove('correct', 'incorrect');
+    });
+
+    allOptions.forEach(input => {
+        input.disabled = false;
+        input.checked = false;
+    });
+
+    nextButton.style.display = 'none';
+}
+
+function checkAnswerStatus(index) {
+    const questionElement = document.getElementById(`q-${index}`);
+    const labels = questionElement.querySelectorAll('label');
+    const allOptions = questionElement.querySelectorAll('input[type="radio"]');
+    
+    allOptions.forEach(input => input.disabled = true);
+
+    labels.forEach(label => {
+        const input = label.querySelector('input');
+        if (input.value === myQuestions[index].correctAnswer) {
+            label.classList.add('correct');
+        } else if (input.value === userAnswers[index]) {
+            label.classList.add('incorrect');
+        }
+        if (input.value === userAnswers[index]) {
+            input.checked = true;
+        }
+    });
+
+    if (index < myQuestions.length - 1) {
+        nextButton.style.display = 'inline-block';
+    }
+}
+
+function checkAnswer(event, questionNumber) {
+    const questionElement = document.getElementById(`q-${questionNumber}`);
+    const labels = questionElement.querySelectorAll('label');
+    const allOptions = questionElement.querySelectorAll('input[type="radio"]');
+
+    allOptions.forEach(input => input.disabled = true);
+
+    labels.forEach(label => {
+        const input = label.querySelector('input');
+        if (input.value === myQuestions[questionNumber].correctAnswer) {
+            label.classList.add('correct');
+        } else if (input.checked) {
+            label.classList.add('incorrect');
+        }
+    });
+
+    if (questionNumber < myQuestions.length - 1) {
+        nextButton.style.display = 'inline-block';
+    } else {
+        setTimeout(showResults, 1000);
+    }
+}
+
+function navigateQuestions(direction) {
+    currentQuestionIndex += direction;
+    if (currentQuestionIndex >= 0 && currentQuestionIndex < myQuestions.length) {
+        showQuestion(currentQuestionIndex);
+    }
+}
+
+function showResults() {
+    quizContainer.style.display = 'none';
+    const numCorrect = userAnswers.filter((answer, index) => answer === myQuestions[index].correctAnswer).length;
+    const percentage = Math.round((numCorrect / myQuestions.length) * 100);
+
+    const finalScoreElement = document.getElementById('final-score');
+    const totalQuestionsFinalElement = document.getElementById('total-questions-final');
+    const percentageFinalElement = document.getElementById('percentage-final');
+
+    finalScoreElement.textContent = numCorrect;
+    totalQuestionsFinalElement.textContent = myQuestions.length;
+    percentageFinalElement.textContent = percentage + '%';
+
+    resultsArea.style.display = 'block';
+    finalStats.style.display = 'block';
+    
+    updateRanking(numCorrect);
+}
+
+// Inicia o carregamento do quiz
+loadQuiz();
+displayRanking();
+</script>
