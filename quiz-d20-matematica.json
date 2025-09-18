@@ -1,0 +1,192 @@
+[
+    {
+        "question": "(SAEMI - PE). Gabriel ganhou 20 massas de modelar. Ele repartiu igualmente essa quantidade entre ele e seus 4 irmãos. Quantas massinhas de modelar, ao todo, Gabriel e cada um de seus 4 irmãos ficou? ",
+        "image": "",
+        "options": [
+            {
+                "text": "4"
+            },
+            {
+                "text": "5"
+            },
+            {
+                "text": "25"
+            },
+            {
+                "text": "24"
+            }
+        ],
+        "correctAnswer": "4"
+    },
+    {
+        "question": "(SADEAM).  Em um auditório, as cadeiras estão organizadas em 9 ﬁleiras com 100 cadeiras em cada uma. Qual é o número total de cadeiras desse auditório? ",
+        "image": "",
+        "options": [
+            {
+                "text": "9 000"
+            },
+            {
+                "text": "90"
+            },
+            {
+                "text": "900"
+            },
+            {
+                "text": "9 100"
+            }
+        ],
+        "correctAnswer": "900"
+    },
+    {
+        "question": "(SARESP).  Laura e Eva são patinadoras excelentes. Numa tarde, foram juntas patinar em uma pista circular de 80 metros de comprimento. Em 15 minutos, Laura deu 30 voltas na pista e, ao mesmo tempo, Eva deu 20 voltas. No total, as duas patinadoras percorreram ",
+        "image": "",
+        "options": [
+            {
+                "text": "4 000 m"
+            },
+            {
+                "text": "130 m"
+            },
+            {
+                "text": "750 m"
+            },
+            {
+                "text": "145 m"
+            }
+        ],
+        "correctAnswer": "4 000 m"
+    },
+    {
+        "question": "(SAEMI - PE).  Cassiano e Lídia aproveitaram a promoção de um tipo de caneta em uma papelaria e resolveram comprar algumas unidades. Cassiano comprou 2 dessas canetas e pagou 5 reais por essa compra. Lídia comprou 12 dessas canetas. Qual foi o valor pago por Lídia nessa compra? ",
+        "image": "",
+        "options": [
+            {
+                "text": "R$ 15,00"
+            },
+            {
+                "text": "R$ 60,00"
+            },
+            {
+                "text": "R$ 25,00"
+            },
+            {
+                "text": "R$ 30,00"
+            }
+        ],
+        "correctAnswer": "R$ 30,00"
+    },
+    {
+        "question": "(SAEMI - PE).  Paulo comprou 10 embalagens de refrigerantes com 6 garrafas em cada uma. Quantas garrafas de refrigerante ele comprou? ",
+        "image": "",
+        "options": [
+            {
+                "text": "6"
+            },
+            {
+                "text": "10"
+            },
+            {
+                "text": "60"
+            },
+            {
+                "text": "16"
+            }
+        ],
+        "correctAnswer": "60"
+    },
+    {
+        "question": "(SAEMI - PE).  Luciana comprou um armário com 5 prateleiras. Ela organizou 255 miniaturas nessas prateleiras, colocando a mesma quantidade em cada uma delas. Quantas miniaturas foram colocadas em cada prateleira desse armário? ",
+        "image": "",
+        "options": [
+            {
+                "text": "1 275"
+            },
+            {
+                "text": "15"
+            },
+            {
+                "text": "250"
+            },
+            {
+                "text": "51"
+            }
+        ],
+        "correctAnswer": "51"
+    },
+    {
+        "question": "(SAEGO).  Em uma campanha foram arrecadados 1 683 agasalhos para serem distribuídos igualmente para 9 comunidades. Quantos agasalhos cada comunidade recebeu? ",
+        "image": "",
+        "options": [
+            {
+                "text": "15 147"
+            },
+            {
+                "text": "962"
+            },
+            {
+                "text": "1 674"
+            },
+            {
+                "text": "187"
+            }
+        ],
+        "correctAnswer": "187"
+    },
+    {
+        "question": "(SAEB).  Marta comprou laços para cabelos e distribuiu entre suas 5 amigas. Cada uma ficou com 4 e ainda sobraram 3 laços. Quantos laços Marta comprou? ",
+        "image": "",
+        "options": [
+            {
+                "text": "19"
+            },
+            {
+                "text": "23"
+            },
+            {
+                "text": "17"
+            },
+            {
+                "text": "20"
+            }
+        ],
+        "correctAnswer": "23"
+    },
+    {
+        "question": "O resultado da operação 32 x 100 é",
+        "image": "",
+        "options": [
+            {
+                "text": "320"
+            },
+            {
+                "text": "3 020"
+            },
+            {
+                "text": "3 200"
+            },
+            {
+                "text": "132"
+            }
+        ],
+        "correctAnswer": "3 200"
+    },
+    {
+        "question": "Resolva a operação: 35 x 27. O resultado dessa é",
+        "image": "",
+        "options": [
+            {
+                "text": "245"
+            },
+            {
+                "text": "945"
+            },
+            {
+                "text": "62"
+            },
+            {
+                "text": "3 527"
+            }
+        ],
+        "correctAnswer": "945"
+    }
+]
