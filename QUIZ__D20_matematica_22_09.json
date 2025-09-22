@@ -1,0 +1,78 @@
+[
+    {
+        "question": "(SAEMI - PE). Gabriel ganhou 20 massas de modelar. Ele repartiu igualmente essa quantidade entre ele e seus 4 irmãos. Quantas massinhas de modelar, ao todo, Gabriel e cada um de seus 4 irmãos ficou?",
+        "image": "",
+        "options": [
+            {
+                "text": "4"
+            },
+            {
+                "text": "5"
+            },
+            {
+                "text": "24"
+            },
+            {
+                "text": "25"
+            }
+        ],
+        "correctAnswer": ""
+    },
+    {
+        "question": "(SAEPE). ) Marcelo foi a uma lanchonete em que o cliente monta seu próprio sanduíche. O cliente pode escolher entre 3 variedades de pães e 6 tipos de recheios. De quantas maneiras diferentes Marcelo pode montar um sanduíche escolhendo uma variedade de pão e um tipo de recheio?",
+        "image": "",
+        "options": [
+            {
+                "text": "18"
+            },
+            {
+                "text": "2"
+            },
+            {
+                "text": "3"
+            },
+            {
+                "text": "9"
+            }
+        ],
+        "correctAnswer": ""
+    },
+    {
+        "question": "(SAEPI). Fátima distribuiu igualmente 87 canetas a 3 crianças. Quantas canetas recebeu cada uma dessas crianças?",
+        "image": "",
+        "options": [
+            {
+                "text": "84"
+            },
+            {
+                "text": "90"
+            },
+            {
+                "text": "29"
+            },
+            {
+                "text": "87"
+            }
+        ],
+        "correctAnswer": ""
+    },
+    {
+        "question": "(SADEAM). Em um auditório, as cadeiras estão organizadas em 9 ﬁleiras com 100 cadeiras em cada uma. Qual é o número total de cadeiras desse auditório?",
+        "image": "",
+        "options": [
+            {
+                "text": "90"
+            },
+            {
+                "text": "9 000"
+            },
+            {
+                "text": "900"
+            },
+            {
+                "text": "9 100"
+            }
+        ],
+        "correctAnswer": ""
+    }
+]
