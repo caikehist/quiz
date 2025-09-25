@@ -1,92 +1,394 @@
-[
-    {
-        "question": "<p class=\"ql-align-justify\">(SAERJ). <strong style=\"color: rgb(0, 0, 0);\">Leia o texto abaixo.</strong></p><p class=\"ql-align-justify\">&nbsp;</p><p class=\"ql-align-center\"><strong style=\"color: rgb(0, 0, 0);\">Tudo por um cotonete</strong></p><p class=\"ql-align-center\"><strong style=\"color: rgb(0, 0, 0);\">&nbsp;</strong></p><p class=\"ql-align-justify\"><span style=\"color: rgb(0, 0, 0);\">Toda vez que mamãe vai tomar banho e me esquece aqui fora, fico deitado bem juntinho&nbsp;à porta, esperando ela acabar. Fecho os olhos mas não durmo, só ﬁnjo. Assim, quando minha irmã passa, ela não esfrega a minha cabeça nem aperta as minhas bochechas, e olha que nem as tenho. Pra falar a verdade, nunca vi um cãozinho ter bochechas, mas a doida da minha irmã sempre diz que tenho, e que nada é melhor do que apertá-las. Isso tudo me confunde um pouco, mas tudo bem. Enquanto ﬁ co quietinho aqui, posso ouvir o barulhinho da água do chuveiro, de que eu tanto gosto. Isso não quer dizer que eu goste de tomar banho. Aquele tanque e a água gelada em nada me atraem. Mas confesso, tenho vontade de experimentar um banho quentinho, de chuveiro.</span></p><p class=\"ql-align-justify\"><span style=\"color: rgb(0, 0, 0);\">Papai chegou, já ouvi o barulho que o carro dele faz quando entra na garagem. Mas vou continuar aqui, não saio daqui por nada, aﬁnal, mamãe é mamãe. É ela quem cuida de mim.</span></p><p class=\"ql-align-justify\"><span style=\"color: rgb(0, 0, 0);\">Me leva na rua todos os dias à tarde, põe a minha comida no pratinho onde colou uma foto minha, me leva pra cortar todos estes pelos que me enchem de calor. Tenho que confessar uma coisa daquele lugar. Eles cortam os pelos, dão banho, cortam as unhas e ainda me enchem de talco. Sempre antes que mamãe chegue para me buscar, botam uma gravatinha escrita “Binho”. [...]</span></p><p class=\"ql-align-right\"><span style=\"color: rgb(0, 0, 0);\">Disponível em: &lt;http://www.qdivertido.com.br/vercronica.php?codigo=2&gt;. Acesso em: 12 mar. 2011. Fragmento. *Adaptado: Reforma Ortográﬁca.</span></p><p class=\"ql-align-justify\"><span style=\"color: rgb(0, 0, 0);\">&nbsp;</span></p><p class=\"ql-align-justify\"><span style=\"color: rgb(0, 0, 0);\">&nbsp;No trecho “... esperando </span><strong style=\"color: rgb(0, 0, 0);\"><u>ela</u></strong><span style=\"color: rgb(0, 0, 0);\">&nbsp;acabar.” (1° parágrafo), a palavra destacada substitui</span></p>",
-        "options": [
-            {
-                "text": "comida."
-            },
-            {
-                "text": "irmã."
-            },
-            {
-                "text": "água."
-            },
-            {
-                "text": "mamãe."
-            }
-        ],
-        "correctAnswer": ""
-    },
-    {
-        "question": "<p class=\"ql-align-justify\">(SEAPE). <strong style=\"color: rgb(0, 0, 0);\">Leia o texto abaixo.</strong></p><p class=\"ql-align-justify\">&nbsp;</p><p class=\"ql-align-center\"><strong style=\"color: rgb(0, 0, 0);\">“Cruciﬁcado” pela gripe, porco é animal de estimação de famosos</strong></p><p class=\"ql-align-center\">&nbsp;</p><p class=\"ql-align-justify\"><span style=\"color: rgb(0, 0, 0);\">Ainda não há provas que o incriminem definitivamente pelo atual surto de gripe que atingiu 11 países. Mesmo assim, o porco já vem sendo julgado culpado por autoridades mundo afora, que determinam até a morte de criações inteiras. </span></p><p class=\"ql-align-justify\"><span style=\"color: rgb(0, 0, 0);\">Na última segunda-feira (27), a OIE (Organização Mundial para a Saúde Animal) reiterou que ainda não foi comprovada a relação entre o vírus e os animais e pediu que a gripe suína seja denominada gripe da América do Norte. </span></p><p class=\"ql-align-justify\"><span style=\"color: rgb(0, 0, 0);\">Mas, para algumas pessoas, pouco importa se a culpa é ou não do porco. Para elas, o animal</span></p><p class=\"ql-align-justify\"><span style=\"color: rgb(0, 0, 0);\">não é um inimigo, e sim um companheiro para todas as horas. </span></p><p class=\"ql-align-right\"><span style=\"color: rgb(0, 0, 0);\">Leia novamente a frase.</span></p><p class=\"ql-align-right\"><span style=\"color: rgb(0, 0, 0);\">Disponível em: &lt;http://www1.folha.uol.com.br/acessado&gt;. Acesso em: 5 set. 2009. </span></p><p class=\"ql-align-justify\">&nbsp;</p><p class=\"ql-align-justify\"><span style=\"color: rgb(0, 0, 0);\">“Para </span><strong style=\"color: rgb(0, 0, 0);\"><u>elas</u></strong><span style=\"color: rgb(0, 0, 0);\">, o animal não é um inimigo, e sim um companheiro para todas as horas.”.</span></p><p class=\"ql-align-justify\"><span style=\"color: rgb(0, 0, 0);\">Nessa frase, a palavra </span><strong style=\"color: rgb(0, 0, 0);\"><u>elas</u></strong><u style=\"color: rgb(0, 0, 0);\">&nbsp;</u><span style=\"color: rgb(0, 0, 0);\">refere-se</span></p><p><br></p>",
-        "options": [
-            {
-                "text": "a criações inteiras."
-            },
-            {
-                "text": "a algumas pessoas."
-            },
-            {
-                "text": "às horas."
-            },
-            {
-                "text": "às autoridades."
-            }
-        ],
-        "correctAnswer": ""
-    },
-    {
-        "question": "<p class=\"ql-align-justify\">(SADEAM). <strong style=\"color: rgb(35, 31, 32);\">Leia o texto abaixo.</strong></p><p class=\"ql-align-justify\">&nbsp;</p><p class=\"ql-align-center\"><strong style=\"color: rgb(35, 31, 32);\">Como é feita a pasta de dente?</strong></p><p class=\"ql-align-center\">&nbsp;</p><p class=\"ql-align-justify\"><span style=\"color: rgb(35, 31, 32);\">A pasta de dente é uma mistura de muitos ingredientes. Os principais são um detergente próprio para limpar os dentes e ﬂúor, que serve para fortalecê-los. Corantes e açúcares dão cor e gosto à pasta. O creme entra no tubo pela parte de baixo, oposta à da tampa. Depois, uma máquina prensa a parte por onde a pasta entrou, selando o tubo. Quanto à pasta com listrinhas, funciona assim: pequenas divisões nas laterais do tubo comportam um gel. Essas divisões desembocam por orifícios à saída da pasta. Quando você aperta o tubo, aciona ao mesmo tempo a saída da pasta clara e do gel, o que forma a pasta com listrinhas do jeito que conhecemos.</span></p><p class=\"ql-align-right\"><em style=\"color: rgb(35, 31, 32);\">Nosso Amiguinho</em><span style=\"color: rgb(35, 31, 32);\">, fev. 2011, p. 29.&nbsp;</span></p><p class=\"ql-align-right\"><br></p><p class=\"ql-align-justify\"><span style=\"color: rgb(35, 31, 32);\">No trecho “... que serve para fortalecê-</span><strong style=\"color: rgb(35, 31, 32);\"><u>los</u></strong><span style=\"color: rgb(35, 31, 32);\">.”, a palavra destacada pode ser substituída por</span></p><p><br></p>",
-        "options": [
-            {
-                "text": "corantes."
-            },
-            {
-                "text": "dentes."
-            },
-            {
-                "text": "ingredientes."
-            },
-            {
-                "text": "açúcares."
-            }
-        ],
-        "correctAnswer": ""
-    },
-    {
-        "question": "<p class=\"ql-align-justify\">(SAEP). <strong style=\"color: rgb(35, 31, 32);\">Leia o texto abaixo.</strong></p><p class=\"ql-align-justify\">&nbsp;</p><p class=\"ql-align-center\"><strong style=\"color: rgb(35, 31, 32);\">A MENINA CORAJOSA</strong></p><p class=\"ql-align-center\"><strong style=\"color: rgb(35, 31, 32);\">&nbsp;</strong></p><p class=\"ql-align-justify\"><span style=\"color: rgb(35, 31, 32);\">Esta história aconteceu com a minha bisavó paterna e foi contada pela ﬁ lha dela, que é minha avó. Quando criança, minha bisavó morava num sítio. Seu pai sustentava a família trabalhando na roça. Todos os dias, ela ia levar comida para o pai no roçado, um lugar longe de casa. Sua cachorrinha sempre ia com ela.</span></p><p class=\"ql-align-justify\"><span style=\"color: rgb(35, 31, 32);\">Um dia, quando levava a marmita para o pai, andando bem tranquila pela trilheira, num lugar onde a mata era fechada, viu que a cachorrinha começou a choramingar e a se enrolar nas próprias pernas. A menina percebeu que alguma coisa estranha estava acontecendo.</span></p><p class=\"ql-align-justify\"><span style=\"color: rgb(35, 31, 32);\">Olhou para os lados e viu uma onça bem grande, com o bote armado, a ponto de pular do capinzeiro em cima dela.</span></p><p class=\"ql-align-justify\"><span style=\"color: rgb(35, 31, 32);\">No que viu a onça, a menina ﬁcou encarando a danada. Pouco a pouco, sempre olhando para o bicho, ela foi se afastando para trás sem se virar. Quando pegou uma boa distância, a menina correu em disparada até se sentir segura.</span></p><p class=\"ql-align-justify\"><span style=\"color: rgb(35, 31, 32);\">Quando chegou em casa, estava sem voz. Depois de muito tempo é que conseguiu falar.</span></p><p class=\"ql-align-justify\"><span style=\"color: rgb(35, 31, 32);\">Os homens da fazenda pegaram as armas e foram procurar a onça. Mas não a encontraram. Minha bisavó foi muito corajosa, porque na hora em que ela viu a onça, conseguiu lembrar do que o povo dizia: “Onça não ataca de frente, porque tem medo do rosto da pessoa. Quem quiser se ver livre dela basta encarar a danada e não lhe dar as costas”.</span></p><p class=\"ql-align-right\"><span style=\"color: rgb(35, 31, 32);\">TOMAZ, Cristina Macedo. </span><em style=\"color: rgb(35, 31, 32);\">De boca em boca</em><span style=\"color: rgb(35, 31, 32);\">. São Paulo: Salesiana, 2002. </span></p><p class=\"ql-align-right\"><span style=\"color: rgb(35, 31, 32);\">&nbsp;</span></p><p><span style=\"color: rgb(35, 31, 32);\">Na frase “Quem quiser se ver livre dela basta encarar a danada e não </span><strong style=\"color: rgb(35, 31, 32);\"><u>lhe</u></strong><span style=\"color: rgb(35, 31, 32);\">&nbsp;dar as costas”, a palavra destacada se refere à</span></p>",
-        "options": [
-            {
-                "text": "cachorrinha."
-            },
-            {
-                "text": "bisavó."
-            },
-            {
-                "text": "onça."
-            },
-            {
-                "text": "menina."
-            }
-        ],
-        "correctAnswer": ""
-    },
-    {
-        "question": "<p>(SAEMI - PE). <strong style=\"color: rgb(35, 31, 32);\">Leia o texto abaixo.</strong></p><p>&nbsp;</p><p class=\"ql-align-center\"><strong style=\"color: rgb(35, 31, 32);\">Bichos de estimação</strong></p><p class=\"ql-align-center\">&nbsp;</p><p class=\"ql-align-justify\"><span style=\"color: rgb(35, 31, 32);\">Sem essa de cãozinho ou gatinho. Algumas crianças escolhem criar em casa bichinhos estranhos como iguana, rato e perereca.</span></p><p class=\"ql-align-justify\"><span style=\"color: rgb(35, 31, 32);\">É assim com Rodrigo Yuzo, 10, que tem uma iguana – a sensação do prédio. Toda vez que ele desce com o réptil para o térreo, os amigos ficam curiosos. Ele gosta de colocar a iguana no pescoço e na cabeça. E jura que o animal o reconhece: “Ela me lambe”.</span></p><p class=\"ql-align-justify\"><span style=\"color: rgb(35, 31, 32);\">Rodrigo resolveu comprar a iguana porque mora em apartamento e, principalmente por ter alergia a pelos de gato e cachorro. Ele explica que o réptil não dá muito trabalho. “Não precisa nem dar banho.” </span></p><p class=\"ql-align-right\"><span style=\"color: rgb(35, 31, 32);\">VALE, Maristela. </span><em style=\"color: rgb(35, 31, 32);\">Folha de São Paulo. Folhinha</em><span style=\"color: rgb(35, 31, 32);\">. 10 fev. 2007. p.2. Fragmento.</span></p><p class=\"ql-align-right\">&nbsp;</p><p class=\"ql-align-justify\"><span style=\"color: rgb(35, 31, 32);\">No trecho “E jura que </span><strong style=\"color: rgb(35, 31, 32);\"><u>o animal</u></strong><span style=\"color: rgb(35, 31, 32);\">&nbsp;o reconhece:”, a expressão destacada substitui</span></p><p><br></p>",
-        "options": [
-            {
-                "text": "a perereca."
-            },
-            {
-                "text": "a iguana."
-            },
-            {
-                "text": "o gatinho."
-            },
-            {
-                "text": "o cãozinho."
-            }
-        ],
-        "correctAnswer": ""
+<div id="editor-container">
+    <h1>Criar/Editar Questionário</h1>
+    <div class="file-uploader">
+        <label>Carregar arquivo JSON para editar:</label>
+        <input accept=".json" id="file-input" type="file" />
+    </div>
+    <div id="questions-list">
+    </div>
+    <button id="add-question-btn">Adicionar Pergunta</button>
+    <br /><br />
+    <button id="generate-json-btn">Gerar e Baixar JSON</button>
+</div>
+
+<script>
+    // Função utilitária para carregar um script (JS ou CSS) dinamicamente
+    function loadScript(url, type, callback) {
+        let element;
+        if (type === 'css') {
+            element = document.createElement('link');
+            element.rel = 'stylesheet';
+            element.href = url;
+        } else {
+            element = document.createElement('script');
+            element.src = url;
+            element.async = true;
+            element.onload = callback;
+        }
+        document.head.appendChild(element);
     }
-]
+
+    // Estilos CSS do editor (Mantidos dentro do script para injeção)
+    const editorStyles = `
+        #editor-container {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #f4f4f4;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .file-uploader {
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px dashed #ccc;
+            border-radius: 5px;
+            background-color: #e9e9e9;
+        }
+        .question-block {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            background-color: #fff;
+            position: relative;
+        }
+        .question-block h3 {
+            margin-top: 0;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        /* Estilo para o Quill Editor (Enunciado da Pergunta) */
+        .question-block .quill-editor {
+            height: 150px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 0 0 4px 4px;
+        }
+        .question-block .ql-toolbar {
+            border-radius: 4px 4px 0 0;
+            border-bottom: none;
+        }
+        .form-group textarea {
+            width: 95%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: vertical;
+            min-height: 50px;
+        }
+        .form-group input[type="text"] {
+            width: 95%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .image-preview {
+            max-width: 150px;
+            height: auto;
+            display: none;
+            margin-top: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .options-list {
+            margin-top: 10px;
+            padding-left: 0;
+        }
+        .option-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 10px;
+            border-bottom: 1px dotted #eee;
+            padding-bottom: 10px;
+        }
+        .option-item input[type="radio"] {
+            margin-right: 10px;
+            margin-top: 8px;
+        }
+        .option-item textarea[name="optionText"] {
+            flex-grow: 1;
+            margin-right: 10px;
+            min-height: 30px;
+        }
+        .option-item input[name="optionImage"] {
+            width: 200px;
+            margin-right: 10px;
+        }
+        .remove-option-btn, .remove-question-btn {
+            background-color: #f44336;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        .add-option-btn, #add-question-btn, #generate-json-btn {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 4px;
+            margin-top: 10px;
+        }
+        #generate-json-btn {
+            background-color: #007BFF;
+        }
+    `;
+
+    // 3. Função principal que contém toda a lógica do seu editor
+    function initializeQuizEditor() {
+        const questionsList = document.getElementById('questions-list');
+        const addQuestionBtn = document.getElementById('add-question-btn');
+        const generateJsonBtn = document.getElementById('generate-json-btn');
+        const fileInput = document.getElementById('file-input');
+
+        let questionCounter = 0;
+
+        function setupImagePreview(inputElement) {
+            const previewElement = inputElement.nextElementSibling;
+            inputElement.addEventListener('input', () => {
+                const url = inputElement.value;
+                if (url) {
+                    previewElement.src = url;
+                    previewElement.style.display = 'block';
+                } else {
+                    previewElement.src = '';
+                    previewElement.style.display = 'none';
+                }
+            });
+        }
+
+        function addQuestion(questionData = null) {
+            questionCounter++;
+            const questionBlock = document.createElement('div');
+            questionBlock.classList.add('question-block');
+            questionBlock.dataset.questionIndex = questionCounter;
+
+            const optionsCounter = questionData && questionData.options ? questionData.options.length : 2;
+            const questionTextValue = questionData ? questionData.question : '';
+            const questionImageValue = questionData && questionData.image ? questionData.image : '';
+
+            questionBlock.innerHTML = `
+                <h3>Pergunta ${questionCounter}</h3>
+                <div class="form-group">
+                    <label>Enunciado da Pergunta:</label>
+                    <div class="quill-editor" id="editor-q-${questionCounter}"></div>
+                </div>
+                <div class="form-group">
+                    <label>URL da Imagem do Enunciado (opcional):</label>
+                    <input type="text" name="questionImage" value="${questionImageValue}">
+                    <img class="image-preview" src="${questionImageValue}" style="display: ${questionImageValue ? 'block' : 'none'};">
+                </div>
+                <div class="options-list">
+                    <h4>Alternativas:</h4>
+                </div>
+                <button type="button" class="add-option-btn">Adicionar Alternativa</button>
+                <button type="button" class="remove-question-btn" style="position: absolute; top: 15px; right: 15px;">Remover Pergunta</button>
+            `;
+
+            const optionsList = questionBlock.querySelector('.options-list');
+            const addOptionBtn = questionBlock.querySelector('.add-option-btn');
+            const removeQuestionBtn = questionBlock.querySelector('.remove-question-btn');
+            const questionImageInput = questionBlock.querySelector('input[name="questionImage"]');
+
+            questionsList.appendChild(questionBlock);
+
+            const editorElement = questionBlock.querySelector(`#editor-q-${questionCounter}`);
+            const quill = new Quill(editorElement, {
+                theme: 'snow',
+                placeholder: 'Digite o enunciado da pergunta aqui...',
+                modules: {
+                    toolbar: [
+                        ['bold', 'italic', 'underline', 'strike'],
+                        [{ 'list': 'ordered'}, { 'list': 'bullet' }],
+                        [{ 'script': 'sub'}, { 'script': 'super' }],
+                        [{ 'indent': '-1'}, { 'indent': '+1' }],
+                        [{ 'direction': 'rtl' }],
+                        [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
+                        [{ 'color': [] }, { 'background': [] }],
+                        [{ 'align': [] }],
+                        ['clean']
+                    ]
+                }
+            });
+            
+            if (questionTextValue) {
+                quill.root.innerHTML = questionTextValue;
+            }
+            
+            questionBlock.quillEditor = quill;
+            setupImagePreview(questionImageInput);
+
+            for (let i = 0; i < optionsCounter; i++) {
+                const option = questionData && questionData.options ? questionData.options[i] : null;
+                addOption(optionsList, option, questionCounter, questionData ? questionData.correctAnswer : null);
+            }
+
+            addOptionBtn.addEventListener('click', () => addOption(optionsList, null, questionCounter));
+            removeQuestionBtn.addEventListener('click', () => questionBlock.remove());
+        }
+
+        function addOption(optionsList, optionData = null, questionIndex, correctAnswer = null) {
+            const optionItem = document.createElement('div');
+            optionItem.classList.add('option-item');
+            
+            const optionTextValue = optionData ? optionData.text : '';
+            const optionImageValue = optionData && optionData.image ? optionData.image : '';
+
+            const isCorrect = optionData && optionData.text === correctAnswer;
+
+            optionItem.innerHTML = `
+                <input type="radio" name="correctAnswer-${questionIndex}" value="${optionTextValue.replace(/"/g, '&quot;')}" ${isCorrect ? 'checked' : ''}>
+                <textarea name="optionText" placeholder="Texto da alternativa">${optionTextValue}</textarea>
+                <input type="text" name="optionImage" placeholder="URL da Imagem (opcional)" value="${optionImageValue}">
+                <img class="image-preview" src="${optionImageValue}" style="display: ${optionImageValue ? 'block' : 'none'};">
+                <button type="button" class="remove-option-btn">Remover</button>
+            `;
+
+            const removeOptionBtn = optionItem.querySelector('.remove-option-btn');
+            removeOptionBtn.addEventListener('click', () => optionItem.remove());
+
+            const optionImageInput = optionItem.querySelector('input[name="optionImage"]');
+            setupImagePreview(optionImageInput);
+
+            optionsList.appendChild(optionItem);
+        }
+
+        function generateJson() {
+            const questions = [];
+            const questionBlocks = document.querySelectorAll('.question-block');
+            let isValid = true;
+
+            questionBlocks.forEach(block => {
+                if (!isValid) return;
+
+                const quillEditorInstance = block.quillEditor;
+                const questionText = quillEditorInstance.root.innerHTML.trim() === '<p><br></p>'
+                                     ? ''
+                                     : quillEditorInstance.root.innerHTML;
+
+                const questionImage = block.querySelector('input[name="questionImage"]').value.trim();
+                const options = [];
+                const optionItems = block.querySelectorAll('.option-item');
+                const correctAnswerRadio = block.querySelector('input[name^="correctAnswer-"]:checked');
+
+                if (!questionText && !questionImage) {
+                    alert('Por favor, preencha o enunciado ou adicione uma imagem para a Pergunta ' + block.dataset.questionIndex + '.');
+                    isValid = false;
+                    return;
+                }
+                
+                if (!correctAnswerRadio) {
+                    alert('Por favor, selecione a resposta correta para a Pergunta ' + block.dataset.questionIndex + '.');
+                    isValid = false;
+                    return;
+                }
+
+                const correctOptionTextarea = correctAnswerRadio.closest('.option-item').querySelector('textarea[name="optionText"]');
+                const correctAnswer = correctOptionTextarea.value.trim();
+
+                optionItems.forEach(item => {
+                    const optionText = item.querySelector('textarea[name="optionText"]').value.trim();
+                    const optionImage = item.querySelector('input[name="optionImage"]').value.trim();
+                    
+                    if (optionText) {
+                        const option = { text: optionText };
+                        if (optionImage) {
+                            option.image = optionImage;
+                        }
+                        options.push(option);
+                    }
+                });
+                
+                if (options.length < 2) {
+                    alert('A Pergunta ' + block.dataset.questionIndex + ' deve ter pelo menos 2 alternativas preenchidas.');
+                    isValid = false;
+                    return;
+                }
+
+                const newQuestion = {
+                    question: questionText,
+                    options: options,
+                    correctAnswer: correctAnswer
+                };
+                if (questionImage) {
+                    newQuestion.image = questionImage;
+                }
+
+                questions.push(newQuestion);
+            });
+
+            if (!isValid || questions.length === 0) {
+                if (questions.length === 0 && isValid) {
+                    alert('Por favor, adicione pelo menos uma pergunta.');
+                }
+                return;
+            }
+
+            const json = JSON.stringify(questions, null, 4);
+            const blob = new Blob([json], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'perguntas.json';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+            alert('Arquivo perguntas.json gerado com sucesso!');
+        }
+
+        function loadJsonFromFile(event) {
+            const file = event.target.files[0];
+            if (!file) {
+                return;
+            }
+
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                try {
+                    const quizData = JSON.parse(e.target.result);
+                    if (!Array.isArray(quizData)) {
+                        alert("O arquivo JSON não está no formato de lista esperado.");
+                        return;
+                    }
+
+                    questionsList.innerHTML = '';
+                    questionCounter = 0;
+                    quizData.forEach(addQuestion);
+                    alert("Questionário carregado com sucesso!");
+                } catch (error) {
+                    alert("Erro ao ler o arquivo JSON. Certifique-se de que o formato está correto.");
+                    console.error(error);
+                }
+            };
+            reader.readAsText(file);
+        }
+
+        addQuestionBtn.addEventListener('click', () => addQuestion());
+        generateJsonBtn.addEventListener('click', generateJson);
+        fileInput.addEventListener('change', loadJsonFromFile);
+
+        addQuestion();
+    }
+    
+    // Injeta o CSS do editor na tag <head>
+    const styleTag = document.createElement('style');
+    styleTag.textContent = editorStyles;
+    document.head.appendChild(styleTag);
+    
+    // 1. Injeta o CSS do Quill (Tema)
+    loadScript('https://cdn.quilljs.com/1.3.6/quill.snow.css', 'css');
+
+    // 2. Injeta o JS do Quill e, no sucesso, inicializa o editor
+    loadScript('https://cdn.quilljs.com/1.3.6/quill.js', 'js', initializeQuizEditor);
+</script>
