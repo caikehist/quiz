@@ -1,272 +1,377 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar/Editar Questionário JSON</title>
+    <style>
+        #editor-container {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #f4f4f4;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .file-uploader {
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px dashed #ccc;
+            border-radius: 5px;
+            background-color: #e9e9e9;
+        }
+
+        .question-block {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            background-color: #fff;
+            position: relative;
+        }
+
+        .question-block h3 {
+            margin-top: 0;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .form-group textarea { /* Alterado de input[type="text"] para textarea */
+            width: 95%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: vertical; /* Permite redimensionamento vertical */
+            min-height: 50px; /* Altura mínima para textarea de texto */
+        }
+        
+        /* Estilização para o campo de URL de imagem que continua sendo um input (é mais prático para URLs) */
+        .form-group input[type="text"] {
+            width: 95%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .image-preview {
+            max-width: 150px;
+            height: auto;
+            display: none;
+            margin-top: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .options-list {
+            margin-top: 10px;
+            padding-left: 0; /* Removido padding-left para melhor alinhamento */
+        }
+
+        .option-item {
+            display: flex;
+            align-items: flex-start; /* Alinhamento superior para o textarea */
+            margin-bottom: 10px;
+            border-bottom: 1px dotted #eee;
+            padding-bottom: 10px;
+        }
+
+        .option-item input[type="radio"] {
+            margin-right: 10px;
+            margin-top: 8px; /* Ajusta a posição do rádio */
+        }
+
+        .option-item textarea[name="optionText"] { /* Estilo específico para o textarea da alternativa */
+            flex-grow: 1;
+            margin-right: 10px;
+            min-height: 30px; /* Altura menor para o texto da alternativa */
+        }
+        
+        .option-item input[name="optionImage"] { /* Estilo específico para o input de URL da alternativa */
+            width: 200px; /* Largura fixa para o campo de URL da imagem */
+            margin-right: 10px;
+        }
+
+        .remove-option-btn, .remove-question-btn {
+            background-color: #f44336;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        .add-option-btn, #add-question-btn, #generate-json-btn {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 4px;
+            margin-top: 10px;
+        }
+
+        #generate-json-btn {
+            background-color: #007BFF;
+        }
+    </style>
+</head>
+<body>
+
 <div id="editor-container">
     <h1>Criar/Editar Questionário</h1>
     <div class="file-uploader">
-        <label for="file-input">Carregar arquivo JSON para editar:</label>
-        <input type="file" id="file-input" accept=".json">
+        <label>Carregar arquivo JSON para editar:</label>
+        <input accept=".json" id="file-input" type="file" />
     </div>
     <div id="questions-list">
         </div>
     <button id="add-question-btn">Adicionar Pergunta</button>
-    <br><br>
+    <br /><br />
     <button id="generate-json-btn">Gerar e Baixar JSON</button>
 </div>
 
-<style>
-#editor-container {
-    font-family: Arial, sans-serif;
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #f4f4f4;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.file-uploader {
-    margin-bottom: 20px;
-    padding: 10px;
-    border: 1px dashed #ccc;
-    border-radius: 5px;
-    background-color: #e9e9e9;
-}
-
-.question-block {
-    border: 1px solid #ddd;
-    padding: 15px;
-    margin-bottom: 20px;
-    border-radius: 5px;
-    background-color: #fff;
-    position: relative;
-}
-
-.question-block h3 {
-    margin-top: 0;
-}
-
-.form-group {
-    margin-bottom: 15px;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-}
-
-.form-group input[type="text"] {
-    width: 95%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-.options-list {
-    margin-top: 10px;
-    padding-left: 20px;
-}
-
-.option-item {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-}
-
-.option-item input[type="radio"] {
-    margin-right: 10px;
-}
-
-.option-item input[type="text"] {
-    flex-grow: 1;
-    margin-right: 10px;
-}
-
-.remove-option-btn, .remove-question-btn {
-    background-color: #f44336;
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    cursor: pointer;
-    border-radius: 4px;
-}
-
-.add-option-btn, #add-question-btn, #generate-json-btn {
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    cursor: pointer;
-    border-radius: 4px;
-    margin-top: 10px;
-}
-
-#generate-json-btn {
-    background-color: #007BFF;
-}
-</style>
-
 <script>
-const questionsList = document.getElementById('questions-list');
-const addQuestionBtn = document.getElementById('add-question-btn');
-const generateJsonBtn = document.getElementById('generate-json-btn');
-const fileInput = document.getElementById('file-input');
+    const questionsList = document.getElementById('questions-list');
+    const addQuestionBtn = document.getElementById('add-question-btn');
+    const generateJsonBtn = document.getElementById('generate-json-btn');
+    const fileInput = document.getElementById('file-input');
 
-let questionCounter = 0;
+    let questionCounter = 0;
 
-// Adiciona uma nova pergunta ao formulário
-function addQuestion(questionData = null) {
-    questionCounter++;
-    const questionBlock = document.createElement('div');
-    questionBlock.classList.add('question-block');
-    questionBlock.dataset.questionIndex = questionCounter;
-
-    const optionsCounter = questionData ? questionData.options.length : 2;
-
-    questionBlock.innerHTML = `
-        <h3>Pergunta ${questionCounter}</h3>
-        <div class="form-group">
-            <label>Enunciado da Pergunta:</label>
-            <input type="text" name="questionText" value="${questionData ? questionData.question : ''}">
-        </div>
-        <div class="form-group">
-            <label>URL da Imagem do Enunciado (opcional):</label>
-            <input type="text" name="questionImage" value="${questionData ? (questionData.image || '') : ''}">
-        </div>
-        <div class="options-list">
-            <h4>Alternativas:</h4>
-        </div>
-        <button type="button" class="add-option-btn">Adicionar Alternativa</button>
-        <button type="button" class="remove-question-btn" style="position: absolute; top: 15px; right: 15px;">Remover Pergunta</button>
-    `;
-
-    const optionsList = questionBlock.querySelector('.options-list');
-    const addOptionBtn = questionBlock.querySelector('.add-option-btn');
-    const removeQuestionBtn = questionBlock.querySelector('.remove-question-btn');
-
-    for (let i = 0; i < optionsCounter; i++) {
-        const option = questionData ? questionData.options[i] : null;
-        addOption(optionsList, option, questionCounter, questionData ? questionData.correctAnswer : null);
-    }
-
-    addOptionBtn.addEventListener('click', () => addOption(optionsList, null, questionCounter));
-    removeQuestionBtn.addEventListener('click', () => questionBlock.remove());
-
-    questionsList.appendChild(questionBlock);
-}
-
-// Adiciona uma nova alternativa
-function addOption(optionsList, optionData = null, questionIndex, correctAnswer = null) {
-    const optionItem = document.createElement('div');
-    optionItem.classList.add('option-item');
-    
-    // Verifica se a opção atual é a resposta correta para marcar o rádio
-    const isCorrect = optionData && optionData.text === correctAnswer;
-
-    optionItem.innerHTML = `
-        <input type="radio" name="correctAnswer-${questionIndex}" value="${optionData ? optionData.text : ''}" ${isCorrect ? 'checked' : ''}>
-        <input type="text" name="optionText" placeholder="Texto da alternativa" value="${optionData ? optionData.text : ''}">
-        <input type="text" name="optionImage" placeholder="URL da Imagem (opcional)" value="${optionData ? (optionData.image || '') : ''}">
-        <button type="button" class="remove-option-btn">Remover</button>
-    `;
-
-    const removeOptionBtn = optionItem.querySelector('.remove-option-btn');
-    removeOptionBtn.addEventListener('click', () => optionItem.remove());
-
-    optionsList.appendChild(optionItem);
-}
-
-// Gera o arquivo JSON a partir dos dados do formulário
-function generateJson() {
-    const questions = [];
-    const questionBlocks = document.querySelectorAll('.question-block');
-
-    questionBlocks.forEach(block => {
-        const questionText = block.querySelector('input[name="questionText"]').value;
-        const questionImage = block.querySelector('input[name="questionImage"]').value;
-        const options = [];
-        const optionItems = block.querySelectorAll('.option-item');
-        const correctAnswer = block.querySelector('input[name^="correctAnswer-"]:checked');
-        
-        if (!questionText || !correctAnswer) {
-            alert('Por favor, preencha o enunciado e selecione a resposta correta para todas as perguntas.');
-            return;
-        }
-
-        optionItems.forEach(item => {
-            const optionText = item.querySelector('input[name="optionText"]').value;
-            const optionImage = item.querySelector('input[name="optionImage"]').value;
-            if (optionText) {
-                const option = { text: optionText };
-                if (optionImage) {
-                    option.image = optionImage;
-                }
-                options.push(option);
+    function setupImagePreview(inputElement) {
+        // Encontra o próximo irmão que é a tag <img>
+        const previewElement = inputElement.nextElementSibling; 
+        inputElement.addEventListener('input', () => {
+            const url = inputElement.value;
+            if (url) {
+                previewElement.src = url;
+                previewElement.style.display = 'block';
+            } else {
+                previewElement.src = '';
+                previewElement.style.display = 'none';
             }
         });
+    }
+
+    // Adiciona uma nova pergunta ao formulário
+    function addQuestion(questionData = null) {
+        questionCounter++;
+        const questionBlock = document.createElement('div');
+        questionBlock.classList.add('question-block');
+        questionBlock.dataset.questionIndex = questionCounter;
+
+        const optionsCounter = questionData && questionData.options ? questionData.options.length : 2;
         
-        if (options.length < 2) {
-            alert('Cada pergunta deve ter pelo menos 2 alternativas.');
-            return;
+        // Use encodeURIComponent para garantir que os valores iniciais (que podem ter quebras de linha/aspas) funcionem bem no innerHTML, embora o textarea lide melhor com isso do que input
+        const questionTextValue = questionData ? questionData.question : '';
+        const questionImageValue = questionData && questionData.image ? questionData.image : '';
+
+        questionBlock.innerHTML = `
+            <h3>Pergunta ${questionCounter}</h3>
+            <div class="form-group">
+                <label>Enunciado da Pergunta:</label>
+                <textarea name="questionText">${questionTextValue}</textarea>
+            </div>
+            <div class="form-group">
+                <label>URL da Imagem do Enunciado (opcional):</label>
+                <input type="text" name="questionImage" value="${questionImageValue}">
+                <img class="image-preview" src="${questionImageValue}" style="display: ${questionImageValue ? 'block' : 'none'};">
+            </div>
+            <div class="options-list">
+                <h4>Alternativas:</h4>
+            </div>
+            <button type="button" class="add-option-btn">Adicionar Alternativa</button>
+            <button type="button" class="remove-question-btn" style="position: absolute; top: 15px; right: 15px;">Remover Pergunta</button>
+        `;
+
+        const optionsList = questionBlock.querySelector('.options-list');
+        const addOptionBtn = questionBlock.querySelector('.add-option-btn');
+        const removeQuestionBtn = questionBlock.querySelector('.remove-question-btn');
+        const questionImageInput = questionBlock.querySelector('input[name="questionImage"]');
+
+        setupImagePreview(questionImageInput);
+
+        // Adiciona as alternativas existentes ou 2 vazias
+        for (let i = 0; i < optionsCounter; i++) {
+            const option = questionData && questionData.options ? questionData.options[i] : null;
+            addOption(optionsList, option, questionCounter, questionData ? questionData.correctAnswer : null);
         }
 
-        questions.push({
-            question: questionText,
-            image: questionImage,
-            options: options,
-            correctAnswer: correctAnswer.value
-        });
-    });
+        addOptionBtn.addEventListener('click', () => addOption(optionsList, null, questionCounter));
+        removeQuestionBtn.addEventListener('click', () => questionBlock.remove());
 
-    if (questions.length === 0) {
-        alert('Por favor, adicione pelo menos uma pergunta.');
-        return;
+        questionsList.appendChild(questionBlock);
     }
 
-    const json = JSON.stringify(questions, null, 4);
-    const blob = new Blob([json], { type: 'application/json' });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = 'perguntas.json';
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    URL.revokeObjectURL(url);
-    alert('Arquivo perguntas.json gerado com sucesso!');
-}
+    // Adiciona uma nova alternativa
+    function addOption(optionsList, optionData = null, questionIndex, correctAnswer = null) {
+        const optionItem = document.createElement('div');
+        optionItem.classList.add('option-item');
+        
+        const optionTextValue = optionData ? optionData.text : '';
+        const optionImageValue = optionData && optionData.image ? optionData.image : '';
 
-// Função para carregar um arquivo JSON e preencher o formulário
-function loadJsonFromFile(event) {
-    const file = event.target.files[0];
-    if (!file) {
-        return;
+        // Verifica se a opção atual é a resposta correta para marcar o rádio
+        // A comparação é feita pelo texto da alternativa
+        const isCorrect = optionData && optionData.text === correctAnswer;
+
+        optionItem.innerHTML = `
+            <input type="radio" name="correctAnswer-${questionIndex}" value="${optionTextValue.replace(/"/g, '&quot;')}" ${isCorrect ? 'checked' : ''} onchange="updateRadioValue(this)">
+            <textarea name="optionText" placeholder="Texto da alternativa" oninput="updateCorrespondingRadio(this)">${optionTextValue}</textarea>
+            <input type="text" name="optionImage" placeholder="URL da Imagem (opcional)" value="${optionImageValue}">
+            <img class="image-preview" src="${optionImageValue}" style="display: ${optionImageValue ? 'block' : 'none'};">
+            <button type="button" class="remove-option-btn">Remover</button>
+        `;
+
+        const removeOptionBtn = optionItem.querySelector('.remove-option-btn');
+        removeOptionBtn.addEventListener('click', () => optionItem.remove());
+
+        const optionImageInput = optionItem.querySelector('input[name="optionImage"]');
+        setupImagePreview(optionImageInput);
+
+        optionsList.appendChild(optionItem);
+    }
+    
+    // Função para atualizar o valor do input radio quando o textarea da alternativa muda
+    function updateCorrespondingRadio(textareaElement) {
+        const radioElement = textareaElement.closest('.option-item').querySelector('input[type="radio"]');
+        // Apenas atualiza o valor do radio se ele estiver marcado
+        if (radioElement.checked) {
+             radioElement.value = textareaElement.value.replace(/"/g, '&quot;');
+        }
+    }
+    
+    // Função para garantir que, ao marcar o radio, ele pegue o valor atual do textarea
+    function updateRadioValue(radioElement) {
+        const textareaElement = radioElement.closest('.option-item').querySelector('textarea[name="optionText"]');
+        radioElement.value = textareaElement.value.replace(/"/g, '&quot;');
     }
 
-    const reader = new FileReader();
-    reader.onload = (e) => {
-        try {
-            const quizData = JSON.parse(e.target.result);
-            if (!Array.isArray(quizData)) {
-                alert("O arquivo JSON não está no formato de lista esperado.");
+
+    // Gera o arquivo JSON a partir dos dados do formulário
+    function generateJson() {
+        const questions = [];
+        const questionBlocks = document.querySelectorAll('.question-block');
+        let isValid = true;
+
+        questionBlocks.forEach(block => {
+            if (!isValid) return; // Se uma pergunta falhar, para a iteração
+
+            const questionText = block.querySelector('textarea[name="questionText"]').value.trim();
+            const questionImage = block.querySelector('input[name="questionImage"]').value.trim();
+            const options = [];
+            const optionItems = block.querySelectorAll('.option-item');
+            const correctAnswerRadio = block.querySelector('input[name^="correctAnswer-"]:checked');
+            
+            if ((!questionText && !questionImage)) {
+                alert('Por favor, preencha o enunciado ou adicione uma imagem para a Pergunta ' + block.dataset.questionIndex + '.');
+                isValid = false;
+                return;
+            }
+            
+            if (!correctAnswerRadio) {
+                alert('Por favor, selecione a resposta correta para a Pergunta ' + block.dataset.questionIndex + '.');
+                isValid = false;
+                return;
+            }
+            
+            // O valor do radio já deve estar atualizado pelo listener onchange/oninput, mas garantimos
+            const correctAnswer = correctAnswerRadio.value;
+
+            optionItems.forEach(item => {
+                const optionText = item.querySelector('textarea[name="optionText"]').value.trim();
+                const optionImage = item.querySelector('input[name="optionImage"]').value.trim();
+                
+                if (optionText) {
+                    const option = { text: optionText };
+                    if (optionImage) {
+                        option.image = optionImage;
+                    }
+                    options.push(option);
+                }
+            });
+            
+            if (options.length < 2) {
+                alert('A Pergunta ' + block.dataset.questionIndex + ' deve ter pelo menos 2 alternativas preenchidas.');
+                isValid = false;
                 return;
             }
 
-            questionsList.innerHTML = '';
-            questionCounter = 0;
-            quizData.forEach(addQuestion);
-            alert("Questionário carregado com sucesso!");
-        } catch (error) {
-            alert("Erro ao ler o arquivo JSON. Certifique-se de que o formato está correto.");
-            console.error(error);
+            questions.push({
+                question: questionText,
+                image: questionImage || undefined, // Não inclui a chave se estiver vazia
+                options: options,
+                correctAnswer: correctAnswer
+            });
+        });
+
+        if (!isValid || questions.length === 0) {
+            if (questions.length === 0 && isValid) {
+                 alert('Por favor, adicione pelo menos uma pergunta.');
+            }
+            return;
         }
-    };
-    reader.readAsText(file);
-}
+
+        const json = JSON.stringify(questions, null, 4);
+        const blob = new Blob([json], { type: 'application/json' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'perguntas.json';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+        alert('Arquivo perguntas.json gerado com sucesso!');
+    }
+
+    // Função para carregar um arquivo JSON e preencher o formulário
+    function loadJsonFromFile(event) {
+        const file = event.target.files[0];
+        if (!file) {
+            return;
+        }
+
+        const reader = new FileReader();
+        reader.onload = (e) => {
+            try {
+                const quizData = JSON.parse(e.target.result);
+                if (!Array.isArray(quizData)) {
+                    alert("O arquivo JSON não está no formato de lista esperado.");
+                    return;
+                }
+
+                questionsList.innerHTML = '';
+                questionCounter = 0;
+                // Reseta questionCounter e o utiliza dentro de addQuestion
+                quizData.forEach(addQuestion); 
+                alert("Questionário carregado com sucesso!");
+            } catch (error) {
+                alert("Erro ao ler o arquivo JSON. Certifique-se de que o formato está correto.");
+                console.error(error);
+            }
+        };
+        reader.readAsText(file);
+    }
 
 
-addQuestionBtn.addEventListener('click', () => addQuestion());
-generateJsonBtn.addEventListener('click', generateJson);
-fileInput.addEventListener('change', loadJsonFromFile);
+    addQuestionBtn.addEventListener('click', () => addQuestion());
+    generateJsonBtn.addEventListener('click', generateJson);
+    fileInput.addEventListener('change', loadJsonFromFile);
 
-// Adiciona uma pergunta inicial ao carregar a página
-addQuestion();
+    // Adiciona uma pergunta inicial ao carregar a página
+    addQuestion();
 </script>
+
+</body>
+</html>
