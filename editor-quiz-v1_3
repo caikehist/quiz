@@ -23,7 +23,7 @@
             element = document.createElement('script');
             element.src = url;
             element.async = true;
-            element.onload = callback; // Callback só para scripts JS
+            element.onload = callback;
         }
         document.head.appendChild(element);
     }
@@ -67,7 +67,7 @@
         }
         /* Estilo para o Quill Editor (Enunciado da Pergunta) */
         .question-block .quill-editor {
-            height: 150px; /* Altura mínima para o editor de rich text */
+            height: 150px;
             background-color: #fff;
             border: 1px solid #ccc;
             border-radius: 0 0 4px 4px;
@@ -146,7 +146,6 @@
 
     // 3. Função principal que contém toda a lógica do seu editor
     function initializeQuizEditor() {
-        // [CÓDIGO PRINCIPAL DO EDITOR]
         const questionsList = document.getElementById('questions-list');
         const addQuestionBtn = document.getElementById('add-question-btn');
         const generateJsonBtn = document.getElementById('generate-json-btn');
@@ -155,7 +154,7 @@
         let questionCounter = 0;
 
         function setupImagePreview(inputElement) {
-            const previewElement = inputElement.nextElementSibling; 
+            const previewElement = inputElement.nextElementSibling;
             inputElement.addEventListener('input', () => {
                 const url = inputElement.value;
                 if (url) {
@@ -168,7 +167,6 @@
             });
         }
 
-        // Adiciona uma nova pergunta ao formulário
         function addQuestion(questionData = null) {
             questionCounter++;
             const questionBlock = document.createElement('div');
@@ -204,7 +202,6 @@
 
             questionsList.appendChild(questionBlock);
 
-            // Inicialização do Quill
             const editorElement = questionBlock.querySelector(`#editor-q-${questionCounter}`);
             const quill = new Quill(editorElement, {
                 theme: 'snow',
@@ -240,8 +237,6 @@
             removeQuestionBtn.addEventListener('click', () => questionBlock.remove());
         }
 
-        // Funções addOption, updateCorrespondingRadio, updateRadioValue, generateJson e loadJsonFromFile...
-        // ... (o restante da sua lógica JS)
         function addOption(optionsList, optionData = null, questionIndex, correctAnswer = null) {
             const optionItem = document.createElement('div');
             optionItem.classList.add('option-item');
@@ -252,8 +247,8 @@
             const isCorrect = optionData && optionData.text === correctAnswer;
 
             optionItem.innerHTML = `
-                <input type="radio" name="correctAnswer-${questionIndex}" value="${optionTextValue.replace(/"/g, '&quot;')}" ${isCorrect ? 'checked' : ''} onchange="updateRadioValue(this)">
-                <textarea name="optionText" placeholder="Texto da alternativa" oninput="updateCorrespondingRadio(this)">${optionTextValue}</textarea>
+                <input type="radio" name="correctAnswer-${questionIndex}" value="${optionTextValue.replace(/"/g, '&quot;')}" ${isCorrect ? 'checked' : ''}>
+                <textarea name="optionText" placeholder="Texto da alternativa">${optionTextValue}</textarea>
                 <input type="text" name="optionImage" placeholder="URL da Imagem (opcional)" value="${optionImageValue}">
                 <img class="image-preview" src="${optionImageValue}" style="display: ${optionImageValue ? 'block' : 'none'};">
                 <button type="button" class="remove-option-btn">Remover</button>
@@ -267,19 +262,6 @@
 
             optionsList.appendChild(optionItem);
         }
-        
-        function updateCorrespondingRadio(textareaElement) {
-            const radioElement = textareaElement.closest('.option-item').querySelector('input[type="radio"]');
-            if (radioElement.checked) {
-                radioElement.value = textareaElement.value.replace(/"/g, '&quot;');
-            }
-        }
-        
-        function updateRadioValue(radioElement) {
-            const textareaElement = radioElement.closest('.option-item').querySelector('textarea[name="optionText"]');
-            radioElement.value = textareaElement.value.replace(/"/g, '&quot;');
-        }
-
 
         function generateJson() {
             const questions = [];
@@ -290,15 +272,15 @@
                 if (!isValid) return;
 
                 const quillEditorInstance = block.quillEditor;
-                const questionText = quillEditorInstance.root.innerHTML.trim() === '<p><br></p>' 
-                                    ? '' 
-                                    : quillEditorInstance.root.innerHTML;
+                const questionText = quillEditorInstance.root.innerHTML.trim() === '<p><br></p>'
+                                     ? ''
+                                     : quillEditorInstance.root.innerHTML;
 
                 const questionImage = block.querySelector('input[name="questionImage"]').value.trim();
                 const options = [];
                 const optionItems = block.querySelectorAll('.option-item');
                 const correctAnswerRadio = block.querySelector('input[name^="correctAnswer-"]:checked');
-                
+
                 if (!questionText && !questionImage) {
                     alert('Por favor, preencha o enunciado ou adicione uma imagem para a Pergunta ' + block.dataset.questionIndex + '.');
                     isValid = false;
@@ -310,8 +292,9 @@
                     isValid = false;
                     return;
                 }
-                
-                const correctAnswer = correctAnswerRadio.value;
+
+                const correctOptionTextarea = correctAnswerRadio.closest('.option-item').querySelector('textarea[name="optionText"]');
+                const correctAnswer = correctOptionTextarea.value.trim();
 
                 optionItems.forEach(item => {
                     const optionText = item.querySelector('textarea[name="optionText"]').value.trim();
@@ -381,7 +364,7 @@
 
                     questionsList.innerHTML = '';
                     questionCounter = 0;
-                    quizData.forEach(addQuestion); 
+                    quizData.forEach(addQuestion);
                     alert("Questionário carregado com sucesso!");
                 } catch (error) {
                     alert("Erro ao ler o arquivo JSON. Certifique-se de que o formato está correto.");
@@ -395,12 +378,8 @@
         generateJsonBtn.addEventListener('click', generateJson);
         fileInput.addEventListener('change', loadJsonFromFile);
 
-        // Adiciona uma pergunta inicial ao carregar a página
         addQuestion();
     }
-
-
-    // 4. Fluxo de Injeção: Carregar CSS, Carregar JS e, finalmente, inicializar
     
     // Injeta o CSS do editor na tag <head>
     const styleTag = document.createElement('style');
@@ -412,5 +391,4 @@
 
     // 2. Injeta o JS do Quill e, no sucesso, inicializa o editor
     loadScript('https://cdn.quilljs.com/1.3.6/quill.js', 'js', initializeQuizEditor);
-
 </script>
