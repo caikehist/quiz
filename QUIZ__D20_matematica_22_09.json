@@ -16,7 +16,7 @@
                 "text": "25"
             }
         ],
-        "correctAnswer": ""
+        "correctAnswer": "5"
     },
     {
         "question": "(SAEPE). ) Marcelo foi a uma lanchonete em que o cliente monta seu próprio sanduíche. O cliente pode escolher entre 3 variedades de pães e 6 tipos de recheios. De quantas maneiras diferentes Marcelo pode montar um sanduíche escolhendo uma variedade de pão e um tipo de recheio?",
@@ -35,7 +35,7 @@
                 "text": "9"
             }
         ],
-        "correctAnswer": ""
+        "correctAnswer": "18"
     },
     {
         "question": "(SAEPI). Fátima distribuiu igualmente 87 canetas a 3 crianças. Quantas canetas recebeu cada uma dessas crianças?",
@@ -54,7 +54,7 @@
                 "text": "87"
             }
         ],
-        "correctAnswer": ""
+        "correctAnswer": "29"
     },
     {
         "question": "(SADEAM). Em um auditório, as cadeiras estão organizadas em 9 ﬁleiras com 100 cadeiras em cada uma. Qual é o número total de cadeiras desse auditório?",
@@ -73,6 +73,6 @@
                 "text": "9 100"
             }
         ],
-        "correctAnswer": ""
+        "correctAnswer": "900"
     }
 ]
