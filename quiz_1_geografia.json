@@ -1,0 +1,164 @@
+[
+    {
+        "question": "<p>Qual elemento do mapa é essencial para indicar o significado dos símbolos, cores e linhas utilizadas na representação, servindo como uma chave de leitura?</p>",
+        "options": [
+            {
+                "text": "Título"
+            },
+            {
+                "text": "Escala"
+            },
+            {
+                "text": "Orientação"
+            },
+            {
+                "text": "Legenda"
+            }
+        ],
+        "correctAnswer": "Legenda"
+    },
+    {
+        "question": "<p>A paisagem que foi modificada pela ação do ser humano, incorporando elementos como estradas, plantações e cidades, é corretamente denominada:</p>",
+        "options": [
+            {
+                "text": "Paisagem Intocada"
+            },
+            {
+                "text": "Paisagem Cultural"
+            },
+            {
+                "text": "Paisagem Natural"
+            },
+            {
+                "text": "Paisagem Subterrânea"
+            }
+        ],
+        "correctAnswer": "Paisagem Cultural"
+    },
+    {
+        "question": "<p>O termo que se refere à condição momentânea da atmosfera (como está o céu agora, se chove ou faz sol) em um local específico é o:</p>",
+        "options": [
+            {
+                "text": "Estação do Ano"
+            },
+            {
+                "text": "Tempo (Meteorológico)"
+            },
+            {
+                "text": "Clima"
+            },
+            {
+                "text": "Fuso Horário"
+            }
+        ],
+        "correctAnswer": "Tempo (Meteorológico)"
+    },
+    {
+        "question": "<p>Qual das seguintes formas de relevo é caracterizada por grandes superfícies planas ou levemente onduladas, geralmente localizadas em baixas altitudes, próximas a rios ou litorais?</p>",
+        "options": [
+            {
+                "text": "Planalto"
+            },
+            {
+                "text": "Serra"
+            },
+            {
+                "text": "Planície"
+            },
+            {
+                "text": "Montanha"
+            }
+        ],
+        "correctAnswer": "Planície"
+    },
+    {
+        "question": "<p>O espaço geográfico onde predominam atividades como agricultura, pecuária e extrativismo, com menor concentração de pessoas e construções, é o ambiente:</p>",
+        "options": [
+            {
+                "text": "Industrial"
+            },
+            {
+                "text": "Rural"
+            },
+            {
+                "text": "Metropolitano"
+            },
+            {
+                "text": "Urbano"
+            }
+        ],
+        "correctAnswer": "Rural"
+    },
+    {
+        "question": "<p>Para gerar a maior parte da eletricidade no Brasil, represamos rios em grandes barragens para movimentar turbinas. O nome dado a esse tipo de usina de energia é:</p>",
+        "options": [
+            {
+                "text": "Usina Hidrelétrica"
+            },
+            {
+                "text": "Usina Termelétrica"
+            },
+            {
+                "text": "Usina Eólica"
+            },
+            {
+                "text": "Usina Nuclear"
+            }
+        ],
+        "correctAnswer": "Usina Hidrelétrica"
+    },
+    {
+        "question": "<p>Qual das cinco grandes regiões do Brasil (segundo o IBGE) possui a maior extensão territorial e é conhecida por abrigar a maior parte da Floresta Amazônica?</p>",
+        "options": [
+            {
+                "text": "Sudeste"
+            },
+            {
+                "text": "Norte"
+            },
+            {
+                "text": "Centro-Oeste"
+            },
+            {
+                "text": "Nordeste"
+            }
+        ],
+        "correctAnswer": "Norte"
+    },
+    {
+        "question": "<p>Petróleo, carvão mineral e gás natural são exemplos de recursos naturais que levam milhões de anos para se formar na natureza. Por isso, são classificados como recursos:</p>",
+        "options": [
+            {
+                "text": "Recursos Não Renováveis"
+            },
+            {
+                "text": "Recursos Renováveis"
+            },
+            {
+                "text": "Recursos Abundantes"
+            },
+            {
+                "text": "Recursos Hídricos"
+            }
+        ],
+        "correctAnswer": "Recursos Não Renováveis"
+    },
+    {
+        "question": "<p>Qual instrumento de orientação utiliza uma agulha imantada que sempre aponta para o Norte Magnético da Terra?</p>",
+        "options": [
+            {
+                "text": "GPS"
+            },
+            {
+                "text": "Bússola"
+            },
+            {
+                "text": "Rosa dos Ventos"
+            },
+            {
+                "text": "Escala"
+            }
+        ],
+        "correctAnswer": "Bússola"
+    }
+]
