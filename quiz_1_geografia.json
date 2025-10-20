@@ -160,5 +160,23 @@
             }
         ],
         "correctAnswer": "Bússola"
+    },
+    {
+        "question": "<p>Qual tipo de mapa tem como principal finalidade mostrar as fronteiras e divisões administrativas do espaço, como limites entre países, estados e municípios?</p>",
+        "options": [
+            {
+                "text": "Mapa Físico"
+            },
+            {
+                "text": "Mapa Climático"
+            },
+            {
+                "text": "Mapa Político"
+            },
+            {
+                "text": "Mapa Rodoviário"
+            }
+        ],
+        "correctAnswer": "Mapa Político"
     }
 ]
